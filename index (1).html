@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Карина - Красота веб-страниц</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      color: #333;
+      overflow: hidden;
+    }
+    .heart {
+      width: 100px;
+      height: 100px;
+      background: #ff4757;
+      position: relative;
+      transform: rotate(-45deg);
+      margin-bottom: 20px;
+      animation: beat 1s infinite;
+      cursor: pointer;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      width: 100px;
+      height: 100px;
+      background: #ff4757;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+    .heart::after {
+      top: 0;
+      left: 50px;
+    }
+    .description {
+      text-align: center;
+      margin: 20px;
+      font-size: 18px;
+    }
+    .button {
+      background: #ff4757;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.5s ease;
+    }
+    .button:hover {
+      background: linear-gradient(45deg, #ff4757, white, #ff4757, white, #ff4757);
+      background-size: 400% 400%;
+      animation: gradientFlow 2s ease infinite;
+    }
+    .mini-heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4757;
+      transform: rotate(-45deg);
+      animation: float 2s ease-out forwards;
+    }
+    .mini-heart::before,
+    .mini-heart::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: #ff4757;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .mini-heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .mini-heart::after {
+      top: 0;
+      left: 10px;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.1) rotate(-45deg); }
+    }
+    @keyframes fastBeat {
+      0%, 100% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.2) rotate(-45deg); }
+    }
+    @keyframes explode {
+      0% { opacity: 1; transform: scale(1) rotate(-45deg); }
+      100% { opacity: 0; transform: scale(3) rotate(-45deg); }
+    }
+    @keyframes float {
+      0% { opacity: 1; transform: translate(0, 0) rotate(-45deg); }
+      100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(-45deg); }
+    }
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="heart" id="main-heart"></div>
+  <p class="description">Карина, это страница сделана чтобы показать всю красоту веб страниц</p>
+  <a href="https://web.telegram.org/k/#@baby_babyyo" class="button">Перейти в Telegram</a>
+
+  <script>
+    const mainHeart = document.getElementById('main-heart');
+
+    mainHeart.addEventListener('click', () => {
+      // Ускоряем биение
+      mainHeart.style.animation = 'fastBeat 0.3s infinite';
+
+      // Ждем 1 секунду, затем создаем взрыв
+      setTimeout(() => {
+        mainHeart.style.animation = 'explode 0.5s forwards';
+
+        // Создаем маленькие сердечки
+        for (let i = 0; i < 30; i++) {
+          const miniHeart = document.createElement('div');
+          miniHeart.classList.add('mini-heart');
+          miniHeart.style.left = `${Math.random() * 100}vw`;
+          miniHeart.style.top = `${Math.random() * 100}vh`;
+          miniHeart.style.setProperty('--x', `${Math.random() * 200 - 100}vw`);
+          miniHeart.style.setProperty('--y', `${Math.random() * 200 - 100}vh`);
+          document.body.appendChild(miniHeart);
+
+          // Удаляем сердечко после анимации
+          setTimeout(() => {
+            miniHeart.remove();
+          }, 2000);
+        }
+
+        // Возвращаем основное сердечко через 2 секунды
+        setTimeout(() => {
+          mainHeart.style.animation = 'beat 1s infinite';
+        }, 2000);
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
