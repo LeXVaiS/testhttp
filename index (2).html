@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список одежды</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Caveat', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .button-container div {
+      color: white;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 15px 20px;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 32px;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      text-align: center;
+      width: 100%;
+      color: white;
+      font-size: 24px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>Вот список одежды который может тебе понравится, выбирай❤️</h1>
+  <div class="button-container">
+    <div>❤️</div>
+    <div>❤️</div>
+    <div>❤️</div>
+    <div>❤️</div>
+    <div>❤️</div>
+    <div>❤️</div>
+    <div>❤️</div>
+    <div>❤️</div>
+  </div>
+  <footer>Пусть может это и не те варианты что ты хотела, но я постарался поискать🥺</footer>
+</body>
+</html>
