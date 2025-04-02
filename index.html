@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список одежды</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Caveat', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .button-container a {
+      text-decoration: none;
+      color: white;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 15px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      font-size: 32px;
+    }
+
+    .button-container a:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      text-align: center;
+      width: 100%;
+      color: white;
+      font-size: 24px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>Вот список одежды который может тебе понравится, выбирай❤️</h1>
+  <div class="button-container">
+    <a href="https://aliexpress.ru/item/1005006633406296.html?sku_id=12000037881467076&spm=a2g2w.productlist.search_results.17.28e67e33DdIbzZ" target="_blank">❤️</a>
+    <a href="https://ariexpress.ru/item/1005005973261118.html?sku_id=12000040723169771&spm=a2g2w.productlist.search_results.12.28e67e33DdIbzZ" target="_blank">❤️</a>
+    <a href="https://aliexpress.ru/item/1005005589361082.html?sku_id=12000038891818065&spm=a2g2w.productlist.search_results.9.28e67e33DdIbzZ" target="_blank">❤️</a>
+    <a href="https://aliexpress.ru/item/1005005924218695.html?sku_id=12000034872766499&spm=a2g2w.productlist.search_results.3.46ac15b8uqbGSe" target="_blank">❤️</a>
+    <a href="https://aliexpress.ru/item/1005005924525103.html?sku_id=12000034873432604&spm=a2g2w.productlist.search_results.6.46ac15b8uqbGSe" target="_blank">❤️</a>
+    <a href="https://aliexpress.ru/item/1005007569975363.html?sku_id=12000041359564946&spm=a2g2w.productlist.search_results.11.46ac15b8uqbGSe" target="_blank">❤️</a>
+    <a href="https://aliexpress.ru/item/1005005702223989.html?sku_id=12000034056548474&spm=a2g2w.productlist.search_results.0.46ac15b8uqbGSe" target="_blank">❤️</a>
+    <a href="https://aliexpress.ru/item/1005007188201711.html?sku_id=12000039743342367&spm=a2g2w.productlist.search_results.18.46ac15b8uqbGSe" target="_blank">❤️</a>
+  </div>
+  <footer>Пусть может это и не те варианты что ты хотела, но я постарался поискать🥺</footer>
+</body>
+</html>
